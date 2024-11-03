@@ -1,0 +1,8 @@
+---
+services:
+     ansible:
+        command: 'ansible-playbook -i inventory.yml ./playbooks/00-initial.yml'
+        image: 'git.lmccormick.com/lmc/ansible:v2.13.13'
+        container_name: ansible
+        volumes:
+            - './:/local'
