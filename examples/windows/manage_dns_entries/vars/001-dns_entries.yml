@@ -1,0 +1,14 @@
+---
+dns_entries:
+  - name: "lmdc1"
+    type: "A"
+    state: absent
+    zone: "ad.domain.local"
+  - name: "lmdc2"
+    type: "A"
+    state: absent
+    zone: "ad.domain.local"
+  - name: "lmdc0"
+    type: "A"
+    state: absent
+    zone: "ad.domain.local"

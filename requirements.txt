@@ -1,0 +1,4 @@
+ansible
+pywinrm
+pynetbox
+black

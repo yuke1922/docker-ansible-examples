@@ -1,0 +1,21 @@
+---
+all:
+  children:
+    windows:
+      children:
+        servers:
+          children:
+            domain_controllers:
+              hosts:
+                lmdc01:
+                  ansible_host: lmdc01.ad.domain.local
+                lmdc02:
+                  ansible_host: lmdc02.ad.domain.local
+            member_servers:
+              hosts:
+                lmca1:
+                  ansible_host: lmca1.ad.domain.local
+        workstations:
+          children:
+
+

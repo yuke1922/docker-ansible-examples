@@ -1,0 +1,15 @@
+---
+- name: "[PROJECT] -- Manage DNS Entries on Windows Server"
+  hosts: lmdc01
+  #### Gather Variables
+  pre_tasks:
+    - name: "[PRE TASKS] -- Include all .yml files in vars directory"
+      ansible.builtin.include_vars:
+        dir: ../vars
+        extensions:
+          - 'yml'
+  
+  #### Main Section
+  tasks:
+    # - SECTION 001 - Manage DNS Entries #
+    - include_tasks: ../tasks/dns_entries.yml

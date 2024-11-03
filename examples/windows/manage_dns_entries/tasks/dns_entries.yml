@@ -1,0 +1,8 @@
+---
+- name: "[TASK]--[001] -- Manage DNS Entries"
+  community.windows.win_dns_record:
+    name: "{{ item.name }}"
+    type: "{{ item.type }}"
+    zone: "{{ item.zone }}"
+    state: "{{ item.state }}"
+  loop: "{{ dns_entries }}"
