@@ -14,6 +14,13 @@ cli:
 		-w /local \
 		$(IMG_NAME):$(IMG_VERSION) bash
 
+.PHONY: run
+run:
+	docker run -it --rm --name ${CONTAINER_NAME}\
+		-v $(shell pwd):/local \
+		-w /local \
+		$(IMG_NAME):$(IMG_VERSION) ansible-playbook playbooks/00-main.yml -i inventory.yml --ask-vault-pass
+
 .PHONY: clean
 clean:
 	docker container prune -f

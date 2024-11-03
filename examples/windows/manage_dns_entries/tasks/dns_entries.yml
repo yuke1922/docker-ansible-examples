@@ -1,8 +1,18 @@
 ---
-- name: "[TASK]--[001] -- Manage DNS Entries"
+- name: "[TASK]--[001b] -- Manage DNS Entries - No Value Attribute"
   community.windows.win_dns_record:
     name: "{{ item.name }}"
     type: "{{ item.type }}"
     zone: "{{ item.zone }}"
     state: "{{ item.state }}"
   loop: "{{ dns_entries }}"
+  when: item.value is not defined
+- name: "[TASK]--[001b] -- Manage DNS Entries"
+  community.windows.win_dns_record:
+    name: "{{ item.name }}"
+    type: "{{ item.type }}"
+    zone: "{{ item.zone }}"
+    value: "{{ item.value }}"
+    state: "{{ item.state }}"
+  loop: "{{ dns_entries }}"
+  when: item.value is defined
